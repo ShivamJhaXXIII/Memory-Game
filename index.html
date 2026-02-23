@@ -9,15 +9,34 @@
 </head>
 <body class="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center p-4">
 
-<h1 class="text-3xl font-bold mb-6">Memory Card Flip Game</h1>
+<!-- Confetti Canvas -->
+<canvas id="confetti-canvas" class="fixed inset-0 pointer-events-none z-50"></canvas>
 
-<div id="game-board" class="grid grid-cols-4 gap-4">
-    <!-- Cards will go here -->
+<h1 class="text-3xl font-bold mb-4">Memory Card Flip Game</h1>
+
+<!-- Timer Display -->
+<div id="timer" class="text-xl mb-4 font-mono">Time: <span id="time-display">0.00</span>s</div>
+
+<div class="flex gap-8 items-start">
+    <!-- Game Board -->
+    <div>
+        <div id="game-board" class="grid grid-cols-4 gap-4">
+            <!-- Cards will go here -->
+        </div>
+
+        <button id="reset-btn" class="mt-6 bg-rose-500 px-4 py-2 rounded hover:bg-rose-600 w-full">
+            Reset Game
+        </button>
+    </div>
+
+    <!-- Leaderboard -->
+    <div class="bg-gray-800 p-4 rounded-lg min-w-[200px]">
+        <h2 class="text-xl font-bold mb-3 text-center">🏆 Leaderboard</h2>
+        <ol id="leaderboard" class="list-decimal list-inside space-y-1 text-sm">
+            <li class="text-gray-500">No scores yet</li>
+        </ol>
+    </div>
 </div>
-
-<button id="reset-btn" class="mt-6 bg-rose-500 px-4 py-2 rounded hover:bg-rose-600">
-    Reset Game
-</button>
 
 <script src="script.js"></script>
 </body>
